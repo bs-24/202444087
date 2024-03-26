@@ -24,3 +24,61 @@ int main()
     printf("\n");
   }
 } ////////////////별 계단식 출력
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  unsigned short a, b, result;
+  printf("unsigned short형 유효 범위 : 0~65,535");
+  printf("1.첫 번째 정수 입력 : ");
+  scanf("%hd", &a);
+  printf("2.두 번째 정수 입력 : ");
+  scanf("%hd", &b);
+
+  result = a - b;
+  printf("뺄셈연산 : %hu - %hu = %hu", a, b, result);
+} //////언더플로우
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int add(int a, int b);
+int minus(int a, int b);
+int multi(int a, int b);
+int divin(int a, int b);
+
+int main()
+{
+  int a, b;
+  int result = 0;
+  scanf("%d %d", &a, &b);
+  result = add(a, b);
+  printf("%d + %d = %d", a, b, result);
+  result = minus(a, b);
+  printf("%d - %d = %d", a, b, result);
+  result = multi(a, b);
+  printf("%d * %d = %d", a, b, result);
+  result = divin(a, b);
+  printf("%d / %d = %d", a, b, result);
+  return 0;
+}
+int add(int a, int b)
+{
+  return a + b;
+}
+int minus(int a, int b)
+{
+  return a - b;
+}
+int multi(int a, int b)
+{
+  return a * b;
+}
+int divin(int a, int b)
+{
+  return a / b;
+} ////전처리 함수 사용방법
+
