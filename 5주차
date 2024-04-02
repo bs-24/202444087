@@ -1,1 +1,46 @@
-5주차 시험 문제
+#include <stdio.h>
+
+정수 메인(){
+
+int input, year;
+printf("윤년이면 1, 평년이면 0 출력\n");
+printf("연도 입력 : ____ \b\b\b\b\b"); /// \b는 들여쓰기
+scanf("%d",&input);
+
+year = ((input % 4 == 0) && !(input % 100 == 0)) || (input % 400 == 0);  /////or and 연산
+
+printf("입력한 %d년은 %d에 해당합니다.\n",input,year);
+
+return 0;
+} ////나머지 으용법
+#include <stdio.h>
+
+정수 메인(){
+
+int jumsu;
+문자등급;
+
+printf("점수 입력 : ");
+scanf("%d", &jumsu);
+
+if(jumsu >=90){
+    grade = 'A';
+}
+else if(jumsu >=80){
+    grade = 'B';
+}
+ else if(jumsu >=70){
+    grade = 'C';
+}
+ else if(jumsu >=60){
+    grade = 'D';
+}
+ else if(jumsu >=50){
+    grade = 'E';
+}
+ else{
+    grade = 'F';
+}
+
+printf("점수 등급 = %c\n",grade);
+}/// 조건문 이용 else 활용 연속 도구 사용
