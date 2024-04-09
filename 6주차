@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main(){
+
+    int sum=0;
+    for(int i=1;i<=100;i++){
+        if(i%3 != 0){
+            sum += i;
+             ++sum;
+        }
+       
+    }
+
+
+    printf("%d",sum);
+
+
+}////3의 배수의 합
+#include <stdio.h>
+
+int main(){
+
+    int x,y;
+    char op;
+    scanf("%d %c %d",&x,&op,&y);
+
+    switch (op)
+    {
+    case '+':
+        printf("%d %c %d = %d",x,op,y,x+y);
+        break;
+    case '-':
+        printf("%d %c %d = %d",x,op,y,x-y);
+        break;
+    case '*':
+        printf("%d %c %d = %d",x,op,y,x*y);
+        break;
+    case '/':
+        printf("%d %c %d = %d",x,op,y,x/y);
+        break;
+    default:
+        break;
+    }
+    return 0;
+} ///switch문
