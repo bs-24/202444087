@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int fact(int n);
+
+int mail(){
+
+    int input,result;
+
+    printf("전달 > 팩토리얼 구할 정수 입력 : ");
+    scanf("%d",&input);
+    printf("호출> fact() 함수 호출하여 팩토리얼 계산\n");
+    result=fact(input);
+    printf("회신 > %d! : %d\n");
+    return 0;
+
+}
+
+int fact(int n){
+    if(n<=1){
+        return 1;
+    }
+    else{
+        printf("수행> %d! : %d *(%d - 1)\n",n,n,n);
+        return(n*fact(n-1));
+    }
+} // 자기자신 함수 호출하여 팩토리얼 구하는것 사용자 지정함수를 이용
+
+#include <stdio.h>
+int add();
+int g_a;
+int g_b;
+
+int main(){
+
+    int sum =0;
+    g_a =10;
+    g_b =20;
+
+    printf("g_a = 10, g_b=20일 때 덧셈 연산 결과\n");
+    printf("\n[main() 함수 영역]\n");
+    printf("덧셈 연산 위해 add() 함수 호출\n");
+    sum = add();
+    printf("전역 변수 사용 : %d + %d = %d\n",g_a,g_b,sum);
+    return 0;
+}
+
+int add(){
+    int hap =0;
+    hap = g_a + g_b;
+    return hap;
+
+}//지역변수와 전역변수 사용하여 사용자 함수로 둘의 합 구하기
+
+#include <stdio.h>
+void start();
+
+int main(){
+
+    printf("start 함수 3회 호출 결과\n");
+    start();
+    satrt();
+    start();
+}
+
+void start(){
+    static int s_cnt = 0;
+    int a_cnt =0;
+
+    printf("정적 변수 = %d\t 동적 변수 + %d\n",s_cnt,a_cnt);
+    s_cnt++;
+    a_cnt++;
+}//정적변수 활용법 다시 초기화 x
+    
