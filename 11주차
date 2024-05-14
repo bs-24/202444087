@@ -1,0 +1,112 @@
+#include <stdio.h>
+float m_m();
+
+int main(){
+    int r;
+    float len;
+    printf("반지름을 입력하시오 : ");
+    scanf("%d",&r);
+    len=m_m(r);
+    
+    printf("%.2f",len);
+    
+}
+float m_m(int a){
+    return a*a*3.14;
+    /*3항연사자도 사용가능하니 참고 ? ; 참이면 앞에거 반환 거짓이면 뒤에거 반환*/
+}///사용자 지정함수 반환및 자료형으로 불러오기
+#include <stdio.h>
+
+
+int main(){
+    int score[]={87,92,89,98,78};
+
+    for(int i=0;i<sizeof(score)/sizeof(score[0]);i++ ){
+        printf("score[%d] = %d",i,score[i]); ////20/4
+    }
+    
+}////배열의 크기를 알수있음
+#include <stdio.h>
+#define DT 3
+
+int main(){
+   int score[3];
+   int cnt,sum=0;
+   float avg;
+
+   for(cnt=0;cnt<DT;cnt++){
+    printf("과목%d 점수 : __\b\b\b", cnt +1);
+    scanf("%d",&score[cnt]);
+
+   }
+   for(cnt=0;cnt<DT;cnt++){
+    sum+=score[cnt];
+   }
+   avg=(float)sum/DT;
+   printf("총 점수 합계 : %d \n",sum);
+   printf("평균 점수 : %.2f",avg);
+   
+}///배열의 사용
+#include <stdio.h>
+#define CNT 7
+void count_up(int a[],int cnt){
+    for(int i=0; i<cnt;i++){
+        a[i]+=1;
+    }
+}
+
+int main(){
+   int a[]={1,2,3,4,5,6,7};
+   printf("before : \n");
+   for(int i=0; i<CNT;i++){
+    printf("%d\n",a[i]);
+   }
+   count_up(a,sizeof(a)/sizeof(a[0]));
+    printf("after : \n");
+   for(int i=0; i<CNT;i++){
+    printf("%d\n",a[i]);
+   }
+}//상당히 어려움 a가 주소값을 전달해주는거여서 원본 파일이 바뀜
+#include <stdio.h>
+#define MAX_NUMBERS 100
+#define RANGE 10
+void readnumbers(int numbers[], int a);
+void calculatefrequency(int numbers[], int a,int frequency[]);
+void printfrequency(int frequency[], int range);
+
+int main(){
+    int n;
+    printf("%d 아래로 숫자를 입력하시오 : ",MAX_NUMBERS);
+    scanf("%d",&n);
+
+    if(n<1 || n> MAX_NUMBERS){
+        printf("잘못 입력하셨습니다.");
+        return 1;
+    }
+    int numbers[n];
+    readnumbers(numbers,n);
+    int frequency[RANGE]={0};
+    calculatefrequency(numbers,n,frequency);
+    printfrequency(frequency,RANGE);
+    return 0;
+}
+void readnumbers(int numbers[],int a){
+    printf("enter %d numbers (0~9): ",a);
+    for (int i=0;i<a;i++){
+        scanf("%d",&numbers[i]);
+        if(numbers[i]<0 || numbers[i]>9){
+            printf("유효하지 않은 값 %d 0~9사이를 입력하시오.\n",numbers[i]);
+            i--;
+        }
+    }
+}
+void calculatefrequency(int numvers[], int a,int frequency[]){
+    for(int i=0;i<a;i++){
+        frequency[numvers[i]]++;
+    }
+}
+void printfrequency(int frequency[], int range){
+    for(int i=0; i<range;i++){
+        printf("number %d : %d times\n",i,frequency[i]);
+    }
+}//열심히
