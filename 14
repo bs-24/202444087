@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main(){
+    int a=30;
+    int *pa = NULL;
+     printf("a=30, p=&a 일때\n");
+    pa=&a;
+   
+    printf("1.pointer p of adress  %u\n",pa);
+    printf("2.pointer of p of data  %u\n",*pa);
+   printf("\n *p = 50일때\n");
+   
+   *pa=50;
+   printf("1.포인터 p의 주소값 : %u\n",pa);
+   printf("포인터가 가리키는 p의 데어터값 : %u\n",a);
+    
+}///포인터 사용법 주소를 주는지 값을 주는지
+#include <stdio.h>
+
+int main(){
+    int a=103;
+    int *pa=NULL;
+    pa=&a;
+    printf("int a= 103;\n");
+    printf("int *pa = NULL;\n");
+printf("pa = &a;\n");
+if(pa != NULL){
+       printf("pa 유효한 포인터");
+       printf("포인터 pa의 주소값 : %u\n",pa);
+       printf("포인터가 가리키는 *pa의 데이터값 : %u\n",*pa);
+}
+else{
+   printf("소스코드 08행을 pa는 유효하지 않은 포인터");
+}
+}////포인터
+#include <stdio.h>
+
+int main(){
+    char c;
+    char*pc;
+    pc=&c;
+    int i;
+    int *pi;
+    pi=&i;
+    double d;
+    double *pd;
+    pd =&d;
+    printf("포이터 증감 연산자 사용전 주소값\n");
+    printf("char형 포인터 주소값 : %d\n int형 포인터 주소값 %d\n",pc,pi);
+    printf("%d",pd);
+     *pc++;
+     *pi++;
+     *pd++;
+     printf("연산자 수행후 주소값\n");
+     printf("c : %d i: %d d : %d",pc,pi,pd);
+}//포인터 연산자와의 사용 주소값 증가에 주의
+#include <stdio.h>
+
+int main(){
+   int a[10]={1,2,3,4,5,6,7,8,9};
+   int *pi;
+   pi= &a;
+   printf("%d",pi);
+   printf("%d",*++pi);
+   printf("%d",++*pi);
+   
+}
